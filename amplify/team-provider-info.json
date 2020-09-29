@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-startupchiangmai-dev-104324-authRole",
+      "UnauthRoleArn": "arn:aws:iam::596055867252:role/amplify-startupchiangmai-dev-104324-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::596055867252:role/amplify-startupchiangmai-dev-104324-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-startupchiangmai-dev-104324-deployment",
+      "UnauthRoleName": "amplify-startupchiangmai-dev-104324-unauthRole",
+      "StackName": "amplify-startupchiangmai-dev-104324",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:596055867252:stack/amplify-startupchiangmai-dev-104324/ef0b4f80-0205-11eb-9349-020215af40e8",
+      "AmplifyAppId": "d2fcj9eqrrc52m"
+    }
+  }
+}
