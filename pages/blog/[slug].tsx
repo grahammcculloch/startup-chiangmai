@@ -1,71 +1,79 @@
 import React from 'react';
+import Head from 'next/head';
+import parse from 'date-fns/parse';
+import formatISO from 'date-fns/formatISO';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import { mdToReact } from '../../src/markdown';
+import AuthorBox from '../../src/components/AuthorBox';
+import ChipList from '../../src/components/ChipList';
+import BlogLinks from '../../src/components/BlogLinks';
 
-function BlogPostPage(props) {
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+  }),
+);
+
+function BlogPostPage({ post }) {
+  const styles = useStyles();
+  const content = React.useMemo(() => {
+    return mdToReact(post.content);
+  }, [post]);
   return (
-    <div>
-      <h1>{props.blog.title}</h1>
-      <section
-        dangerouslySetInnerHTML={{ __html: props.blog.content }}
-      ></section>
-    </div>
+    <>
+      <Head>
+        <title>{`${post.title} | Startup Chiang Mai`}</title>
+        <meta name='author' content={post.author.name} />
+        <meta name='description' content={post.description} />
+        <meta property='og:title' content={post.title} />
+        <meta property='og:description' content={post.description} />
+        <meta property='og:site_name' content='Startup Chiang Mai' />
+        <meta property='og:image' content={post.image} />
+        <meta property='og:type' content='article' />
+        <meta
+          property='article:published_time'
+          content={formatISO(parse(post.date, 'dd MMM yyyy', new Date()))}
+        />
+      </Head>
+      <AuthorBox author={post.author} />
+      <Typography variant='h3' component='h1' gutterBottom>
+        {post.title}
+      </Typography>
+      <Typography variant='overline' gutterBottom>
+        {post.date}
+      </Typography>
+      {post.image && <img src={post.image} width='100%' />}
+      {content}
+      <ChipList
+        chips={post.categories.map((category: string) => ({
+          label: category,
+          color: 'secondary',
+          href: `/blog/categories#${category}`,
+        }))}
+      />
+      <BlogLinks prevPost={post.prevPost} nextPost={post.nextPost} />
+    </>
   );
 }
 
 // pass props to BlogPostPage component
 export async function getStaticProps(context) {
-  const fs = require('fs');
-  const html = require('remark-html');
-  const highlight = require('remark-highlight.js');
-  const unified = require('unified');
-  const markdown = require('remark-parse');
-  const matter = require('gray-matter');
-
-  const slug = context.params.slug; // get slug from params
-  const path = `${process.cwd()}/contents/${slug}.md`;
-
-  // read file content and store into rawContent variable
-  const rawContent = fs.readFileSync(path, {
-    encoding: 'utf-8',
-  });
-
-  const { data, content } = matter(rawContent); // pass rawContent to gray-matter to get data and content
-
-  const result = await unified()
-    .use(markdown)
-    .use(highlight) // highlight code block
-    .use(html)
-    .process(content); // pass content to process
-
+  const { getBlogPost } = require('../../src/posts');
+  const post = await getBlogPost(context.params.slug);
   return {
-    props: {
-      blog: {
-        ...data,
-        content: result.toString(),
-      },
-    },
+    props: { post },
   };
 }
 
 // generate HTML paths at build time
 export async function getStaticPaths(context) {
-  const fs = require('fs');
-  const matter = require("gray-matter");
-
-  const path = `${process.cwd()}/contents`;
-  const files = fs.readdirSync(path, 'utf-8');
-
-  const markdownFileNames = files
-    .filter((fn) => fn.endsWith('.md'))
-    .map((fn) => fn.replace('.md', ''));
-
+  const { getBlogPostSlugs } = require('../../src/posts');
   return {
-    paths: markdownFileNames.map((fileName) => {
-      return {
-        params: {
-          slug: fileName,
-        },
-      };
-    }),
+    paths: getBlogPostSlugs().map((slug) => ({
+      params: {
+        slug,
+      },
+    })),
     fallback: false,
   };
 }

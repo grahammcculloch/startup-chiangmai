@@ -1,6 +1,5 @@
 ---
-layout: post
-date: "27-08-2019"
+date: "27 Aug 2019"
 title: 'Editorial: So What is a Startup Anyways?'
 permalink: /definition-of-startup
 description: >-
@@ -10,10 +9,10 @@ description: >-
 author: lily
 categories:
   - Editorial
-  - entrepreneurship
+  - Entrepreneurship
   - Startups
   - Directory
-image: /assets/images/questionmark.jpg
+image: /img/questionmark.jpg
 ---
 
 I've been in the startup world since about 2014. During this time, my life has been all about tech and software, finding product-market fit, automating shit, creating pitch decks, and figuring out how to scale. I'm surrounded by developers and hardcore nerds, and a lot, *a lot* of jargon.&nbsp; It has dawned on me that I've been in a bit of a bubble and the things which are so obvious to me are, well, obviously not so obvious to others.
@@ -36,7 +35,7 @@ That's my definition for the purposes of this website and directory.
 
 It is a definition I've arrived at through a lot of reading and thought and asking others for feedback and checking my assumptions and revising and finally deciding that I don't actually care what other people think too much and my definition is better (\*winks broadly and hopes her arrogance can be forgiven\*).
 
-Go ask [Merriam-Webster](https://www.merriam-webster.com/dictionary/start-up){: target="_blank"}, [Investopedia](https://www.investopedia.com/terms/s/startup.asp){: target="_blank"}, [Startup.com](https://www.startups.com/library/expert-advice/what-is-a-startup-company){: target="_blank"} or [Eric Reis](https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898){: target="_blank"} and they'll all give you a different answer, and there are sensible reasons for that.
+Go ask [Merriam-Webster](https://www.merriam-webster.com/dictionary/start-up), [Investopedia](https://www.investopedia.com/terms/s/startup.asp), [Startup.com](https://www.startups.com/library/expert-advice/what-is-a-startup-company) or [Eric Reis](https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898) and they'll all give you a different answer, and there are sensible reasons for that.
 
 Startups and entrepreneurship have also gained a lot of hype in recent years, and when anything becomes part of the popular culture, it takes on a new life and meanings get broadened and adjusted according to the needs of different groups.
 
@@ -98,6 +97,6 @@ At the moment, I am a one-woman team, so I need all the help I can get\! If you 
 
 First thing's first though, we need to build this directory\! We do not yet have an answer to "how many startups are there in Chiang Mai?" and I don't have enough time and personal connections to compile the master list on my own.
 
-If you have a Chiang Mai based startup or you know of one, **[please help add it to my list](https://docs.google.com/forms/d/e/1FAIpQLSfIr8kanV0cposQ61ZsFKWH-Yx05y6-BqrjRHbDXRKwmTISBg/viewform){: target="_blank"}.** You don't have to know a whole lot about it, just provide the name and some links and I can chase it up myself\!
+If you have a Chiang Mai based startup or you know of one, **[please help add it to my list](https://docs.google.com/forms/d/e/1FAIpQLSfIr8kanV0cposQ61ZsFKWH-Yx05y6-BqrjRHbDXRKwmTISBg/viewform).** You don't have to know a whole lot about it, just provide the name and some links and I can chase it up myself\!
 
 Thanks for your support, and thanks for reading all the way to the end. You're just SUPER.
